@@ -25,8 +25,6 @@ library(metafor)
 library(nlme)
 library(rms)
 library(pracma)
-library(evd)
-require(MASS)
 library(VGAM)
 
 

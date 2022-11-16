@@ -1,9 +1,6 @@
 ## function to generate result figures and tables
 
 library(ggplot2)
-library(gridExtra)
-library(dplyr)
-library(RColorBrewer)
 library(data.table)
 library(purrr)
 

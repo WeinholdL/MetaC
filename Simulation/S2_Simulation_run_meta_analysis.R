@@ -4,11 +4,10 @@ library("batchtools")
 ###################################################################################
 ####
 
-#### file: file with meta-analysis data (generated from XXX)
+#### file: file with meta-analysis data, e.g. "data/Simulation_generate_meta_data_1.rda"
 #### nstudies_per_meta: number of studies included in meta-analysis
 #### ww: simulation run
 
-file<-"data/Simulation_generate_meta_data_1.rda"
 cind_meta<-function(nstudies_per_meta, ww, file){
   source("S0_functions.R")
   

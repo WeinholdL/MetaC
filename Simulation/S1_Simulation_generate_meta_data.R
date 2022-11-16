@@ -7,7 +7,6 @@ cind_function<-function(beta, nmax_samplesize, nstudies, seed,
   
   library(survival)
   library(pec)
-  library(survC1)
   source("S0_functions.R") 
   
   ####--------------------------------------------------------------------------
