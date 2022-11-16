@@ -1,5 +1,6 @@
 MetaC
 
+These files implement the simulation study of the manuscript entitled "Accounting for Time Dependency in Meta-Analyses of Concordance Probability Estimates" by Matthias Schmid, Tim Friede, Nadja Klein and Leonie Weinhold.
 Comparison of meta-analysis and -regression methods for C-indices of studies with varying follow-up times. 
 
 This folder contains R-Code to 
