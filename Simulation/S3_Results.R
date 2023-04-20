@@ -10,7 +10,7 @@ sdRE<-c(0, 0.01, 0.03)
 taumax<-c(0.7,0.9, 2)
 
 
-for(nstudies in c(15, 30, 50)){
+for(nstudies in c(10, 15, 30, 50)){
   #### list of files with nstudies
   loadnames<-paste0("data/Simulation_results_sdRE",
                     rep(sdRE, each=length(taumax)), "_beta0.5_tmax", 
@@ -115,10 +115,10 @@ for(nstudies in c(15, 30, 50)){
     tempResults$label_sdRE<- factor(NA,
                          levels=c(paste0("no~heterogeneity", namefuersdRE,"0)"),
                                   paste0("moderate~heterogeneity", namefuersdRE,"0.01)"),
-                                  paste0("high~heterogeneity", namefuersdRE,"0.03)")))
+                                  paste0("large~heterogeneity", namefuersdRE,"0.03)")))
     tempResults$label_sdRE[tempResults$sdRE==0]<-paste0("no~heterogeneity", namefuersdRE,tempResults$sdRE[tempResults$sdRE==0], ")")
     tempResults$label_sdRE[tempResults$sdRE==0.01]<-paste0("moderate~heterogeneity", namefuersdRE,tempResults$sdRE[tempResults$sdRE==0.01], ")")
-    tempResults$label_sdRE[tempResults$sdRE==0.03]<-paste0("high~heterogeneity", namefuersdRE,tempResults$sdRE[tempResults$sdRE==0.03], ")")
+    tempResults$label_sdRE[tempResults$sdRE==0.03]<-paste0("large~heterogeneity", namefuersdRE,tempResults$sdRE[tempResults$sdRE==0.03], ")")
     
     tempResults$label_taumax<- factor(NA,
                            levels=c(paste0("short~FU", namefuerTaumax,"0.7)"),
@@ -207,7 +207,7 @@ for(nstudies in c(15, 30, 50)){
     C80<-rep(c(0.7774458, 0.7665837, 0.7448051),3)
     
     dummy2<-expand.grid(label_taumax=c('short~FU~(tau[max]==0.7)', 'moderate~FU~(tau[max]==0.9)', 'long~FU~(tau[max]==2)'),
-                        label_sdRE=c('no~heterogeneity~(sigma[a]==0)', 'moderate~heterogeneity~(sigma[a]==0.01)', 'high~heterogeneity~(sigma[a]==0.03)'))
+                        label_sdRE=c('no~heterogeneity~(sigma[a]==0)', 'moderate~heterogeneity~(sigma[a]==0.01)', 'large~heterogeneity~(sigma[a]==0.03)'))
     
     dummy2$C80<-C80
     

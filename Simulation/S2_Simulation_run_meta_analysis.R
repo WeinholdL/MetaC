@@ -335,6 +335,30 @@ submitJobs(ids, reg = r, resources = list(walltime = 43000, partition="batch"))
 
 
 
+####---------------------------------------------------------------------------------------------
+#### K=10 studies
+r <- makeRegistry(file.dir="../scratch/MetaC/Simulation_run_metaanalysis_n10_1")
+args <- expand.grid(ww=1:3000,
+                    nstudies_per_meta=10, 
+                    file="data/Simulation_generate_meta_data_1.rda")
+ids <- batchMap(cind_meta, args=args, reg=r)
+submitJobs(ids, reg = r, resources = list(walltime = 43000, partition="batch"))
+
+r <- makeRegistry(file.dir="../scratch/MetaC/Simulation_run_metaanalysis_n10_2")
+args <- expand.grid(ww=1:3000,
+                    nstudies_per_meta=10, 
+                    file="data/Simulation_generate_meta_data_2.rda")
+ids <- batchMap(cind_meta, args=args, reg=r)
+submitJobs(ids, reg = r, resources = list(walltime = 43000, partition="batch"))
+
+r <- makeRegistry(file.dir="../scratch/MetaC/Simulation_run_metaanalysis_n10_3")
+args <- expand.grid(ww=1:3000,
+                    nstudies_per_meta=10, 
+                    file="data/Simulation_generate_meta_data_3.rda")
+ids <- batchMap(cind_meta, args=args, reg=r)
+submitJobs(ids, reg = r, resources = list(walltime = 43000, partition="batch"))
+
+
 
 ####---------------------------------------------------------------------------------------------
 #### when simulation runs done, aggregate results
@@ -426,6 +450,27 @@ r<-loadRegistry("../scratch/MetaC/Simulation_run_metaanalysis_n15_3")
 getStatus(reg=r)
 results<-reduceResultsList(reg=r)
 niceResults(results)
+
+
+
+####~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+r<-loadRegistry("../scratch/MetaC/Simulation_run_metaanalysis_n10_1")
+getStatus(reg=r)
+results<-reduceResultsList(reg=r)
+niceResults(results)
+
+r<-loadRegistry("../scratch/MetaC/Simulation_run_metaanalysis_n10_2") 
+getStatus(reg=r)
+results<-reduceResultsList(reg=r)
+niceResults(results)
+
+r<-loadRegistry("../scratch/MetaC/Simulation_run_metaanalysis_n10_3")
+getStatus(reg=r)
+results<-reduceResultsList(reg=r)
+niceResults(results)
+
+
+
 
 
 
